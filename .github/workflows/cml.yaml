@@ -7,8 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: 'Train my model'
-        env:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
+        
         run: |
 
           # Your ML workflow goes here
@@ -23,4 +22,6 @@ jobs:
           
           cml-publish model_results.png --md >> report.md
           
-          cml-send-comment --pr report.md
+          cml create comment --pr report.md
+        env:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
