@@ -22,6 +22,6 @@ jobs:
           
           cml-publish model_results.png --md >> report.md
           
-          cml create comment --pr report.md
+          cml create comment report.md
         env:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
