@@ -23,4 +23,4 @@ jobs:
           
           cml-publish model_results.png --md >> report.md
           
-          cml-send-comment report.md
+          cml-send-comment --pr report.md
